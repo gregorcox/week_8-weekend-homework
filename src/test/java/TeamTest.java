@@ -1,14 +1,12 @@
 import models.League;
-import models.Manager;
 import models.Team;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ManagerTest {
+public class TeamTest {
 
-    Manager manager;
     Team team;
     League league;
 
@@ -16,20 +14,17 @@ public class ManagerTest {
     public void setup(){
         league = new League("League");
         team = new Team("Team", league);
-        manager = new Manager("John", "Smith", team);
     }
 
     @Test
     public void hasName(){
-        assertEquals("John", manager.getFirstName());
+        assertEquals("Team", team.getName());
     }
 
     @Test
-    public void hasTeam(){
-        assertEquals(team, manager.getTeam());
+    public void hasLeague(){
+        assertEquals(league, team.getLeague());
     }
-
-
 
 
 }

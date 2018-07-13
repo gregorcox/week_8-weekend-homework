@@ -1,35 +1,30 @@
 import models.League;
-import models.Manager;
+import models.Player;
 import models.Team;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ManagerTest {
+public class PlayerTest {
 
-    Manager manager;
+    Player player;
     Team team;
     League league;
 
     @Before
     public void setup(){
-        league = new League("League");
         team = new Team("Team", league);
-        manager = new Manager("John", "Smith", team);
+        player = new Player("John", "Smith", team);
     }
 
     @Test
     public void hasName(){
-        assertEquals("John", manager.getFirstName());
+        assertEquals("John", player.getFirstName());
     }
 
     @Test
     public void hasTeam(){
-        assertEquals(team, manager.getTeam());
+        assertEquals(team, player.getTeam());
     }
-
-
-
-
 }

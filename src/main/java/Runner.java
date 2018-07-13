@@ -1,8 +1,13 @@
 import db.DBHelper;
+import db.DBLeague;
+import db.DBPlayer;
+import db.DBTeam;
 import models.League;
 import models.Manager;
 import models.Player;
 import models.Team;
+
+import java.util.List;
 
 public class Runner {
 
@@ -38,7 +43,11 @@ public class Runner {
         Manager manager3 = new Manager("Antonio", "Conte", team3);
         DBHelper.save(manager3);
 
+        List<Player> liverpoolPlayers = DBTeam.getPlayersOnTeam(team1);
 
+        List<Team> premierLeagueTeams = DBLeague.getTeamsInLeague(league);
+
+        Manager FirmonosManager = DBPlayer.getPlayersManager(player1);
 
     }
 
