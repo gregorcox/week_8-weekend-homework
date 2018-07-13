@@ -46,4 +46,12 @@ public class League {
     public void setTeams(List<Team> teams) {
         this.teams = teams;
     }
+
+    public void addTeams(Team team){
+        this.teams.add(team);
+    }
+
+    public int getTeamCount(){
+        return this.teams.size();
+    }
 }
