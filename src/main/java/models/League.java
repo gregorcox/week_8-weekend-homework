@@ -5,7 +5,7 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "league")
+@Table(name = "leagues")
 public class League {
 
     private int id;
@@ -30,6 +30,7 @@ public class League {
         this.id = id;
     }
 
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -38,6 +39,7 @@ public class League {
         this.name = name;
     }
 
+    @OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
     public List<Team> getTeams() {
         return teams;
     }
