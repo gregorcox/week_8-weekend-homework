@@ -11,13 +11,13 @@ public class Runner {
         League league = new League("The Premier League");
         DBHelper.save(league);
 
-        Team team1 = new Team("Liverpool");
+        Team team1 = new Team("Liverpool", league);
         DBHelper.save(team1);
 
-        Team team2 = new Team("Manchester United");
+        Team team2 = new Team("Manchester United", league);
         DBHelper.save(team2);
 
-        Team team3 = new Team("Chelsea");
+        Team team3 = new Team("Chelsea", league);
         DBHelper.save(team3);
 
         Player player1 = new Player("Roberto", "Firmino", team1);

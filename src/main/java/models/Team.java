@@ -15,8 +15,9 @@ public class Team {
 
     public Team(){}
 
-    public Team(String name) {
+    public Team(String name, League league) {
         this.name = name;
+        this.league = league;
     }
 
     @Id
