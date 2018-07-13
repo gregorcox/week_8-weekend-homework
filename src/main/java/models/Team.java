@@ -9,6 +9,7 @@ public class Team {
 
     private int id;
     private String name;
+    private League league;
     private List<Player> players;
     private Manager manager;
 
@@ -38,6 +39,7 @@ public class Team {
         this.name = name;
     }
 
+    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
     public List<Player> getPlayers() {
         return players;
     }
@@ -46,11 +48,22 @@ public class Team {
         this.players = players;
     }
 
+    @OneToOne(mappedBy = "team", fetch = FetchType.LAZY)
     public Manager getManager() {
         return manager;
     }
 
     public void setManager(Manager manager) {
         this.manager = manager;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "league_id", nullable = false)
+    public League getLeague() {
+        return league;
+    }
+
+    public void setLeague(League league) {
+        this.league = league;
     }
 }

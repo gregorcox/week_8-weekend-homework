@@ -48,6 +48,8 @@ public class Manager {
         this.lastName = lastName;
     }
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "team_id", nullable = false)
     public Team getTeam() {
         return team;
     }

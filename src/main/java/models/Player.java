@@ -48,6 +48,8 @@ public class Player {
         this.lastName = lastName;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "team_id", nullable = false)
     public Team getTeam() {
         return team;
     }
