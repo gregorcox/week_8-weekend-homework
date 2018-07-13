@@ -12,6 +12,8 @@ public class League {
     private String name;
     private List<Team> teams;
 
+    public League(){}
+
     public League(String name, List<Team> teams) {
         this.name = name;
         this.teams = teams;
