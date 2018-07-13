@@ -14,9 +14,8 @@ public class League {
 
     public League(){}
 
-    public League(String name, List<Team> teams) {
+    public League(String name) {
         this.name = name;
-        this.teams = teams;
     }
 
     @Id
