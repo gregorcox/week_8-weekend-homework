@@ -34,6 +34,9 @@ public class Runner {
         Player player3 = new Player("Eden", "Hazard", team3);
         DBHelper.save(player3);
 
+        Player player4 = new Player("Sadio", "Mane", team1);
+        DBHelper.save(player4);
+
         Manager manager1 = new Manager("Jurgen", "Klopp", team1);
         DBHelper.save(manager1);
 
@@ -43,11 +46,16 @@ public class Runner {
         Manager manager3 = new Manager("Antonio", "Conte", team3);
         DBHelper.save(manager3);
 
+//        DBPlayer.playerTransfer(player4, team2);
+
         List<Player> liverpoolPlayers = DBTeam.getPlayersOnTeam(team1);
 
         List<Team> premierLeagueTeams = DBLeague.getTeamsInLeague(league);
 
         Manager FirmonosManager = DBPlayer.getPlayersManager(player1);
+
+
+
 
     }
 

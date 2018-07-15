@@ -67,4 +67,12 @@ public class Team {
     public void setLeague(League league) {
         this.league = league;
     }
+
+    public void buyPlayer(Player player){
+        this.players.add(player);
+    }
+
+    public void sellPlayer(Player player){
+        this.players.remove(player);
+    }
 }

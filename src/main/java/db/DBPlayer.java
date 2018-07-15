@@ -1,7 +1,9 @@
 package db;
 
+import models.League;
 import models.Manager;
 import models.Player;
+import models.Team;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -29,6 +31,13 @@ public class DBPlayer {
             session.close();
         }
         return manager;
+    }
+
+    public static void playerTransfer(Player player, Team newTeam){
+        player.getTeam().sellPlayer(player);
+        newTeam.buyPlayer(player);
+        player.setTeam(newTeam);
+        DBHelper.update(player);
     }
 
 
